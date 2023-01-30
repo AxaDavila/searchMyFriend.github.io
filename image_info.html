@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Asociar Información</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .form-container {
+        width: 500px;
+        padding: 20px;
+        background-color: lightgray;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid gray;
+      }
+
+      .submit-button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h1>Asociar Información</h1>
+        <form>
+          <input type="text" placeholder="Nombre" id="name-input">
+          <input type="tel" placeholder="Número de Contacto" id="contact-input">
+          <input type="text" placeholder="Ciudad" id="city-input">
+          <select id="country-select">
+            <option value="">Seleccione un País</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Chile">Chile</option>
+            <option value="Colombia">Colombia</option>
+          </select>
+          <input type="submit" value="Asociar" class="submit-button">
+        </form>
+        <p id="error-message" style="color: red;"></p>
+      </div>
+    </div>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+    const nameInput = document.getElementById("name-input");
+    const contactInput = document.getElementById("contact-input");
+    const cityInput = document.getElementById("city-input");
+    const countrySelect = document.getElementById("country-select");
+    const errorMessage = document.getElementById("error-message");
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      const name = nameInput.value.trim();
+      const contact = contactInput.value.trim();
+      const city = cityInput.value.trim();
+      const country = countrySelect.value;
+
+      if (!name || !contact ||

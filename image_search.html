@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Subir Rostro</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .form-container {
+        width: 500px;
+        padding: 20px;
+        background-color: lightgray;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      .upload-button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h1>Subir Rostro</h1>
+        <p>Selecciona una imagen de tu rostro</p>
+        <input id="file-input" type="file" accept="image/*">
+        <label for="file-input" class="upload-button">Seleccionar Archivo</label>
+        <p id="error-message" style="color: red;"></p>
+      </div>
+    </div>
+  </body>
+  <script>
+    const fileInput = document.getElementById("file-input");
+    const errorMessage = document.getElementById("error-message");
+
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+      if (!file) {
+        errorMessage.textContent = "No se seleccionó ningún archivo";
+        return;
+      }
+
+      // Aquí debes agregar código para subir la imagen al servidor y detectar el rostro en la imagen
+
+      errorMessage.textContent = "";
+    });
+  </script>
+</html>

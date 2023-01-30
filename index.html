@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconocimiento Facial y Asociación de Información</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .form-container {
+        width: 500px;
+        padding: 20px;
+        background-color: lightgray;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .face-upload-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 500px;
+        background-color: lightgray;
+        margin-bottom: 20px;
+      }
+
+      .face-upload-container h1 {
+        margin-bottom: 20px;
+      }
+
+      input[type="file"] {
+        padding: 10px 20px;
+        background-color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid gray;
+      }
+
+      .submit-button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .form-container {
+          width: 90%;
+        }
+
+        .face-upload-container {
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="face-upload-container">
+        <h1>Subir Imagen de Rostro</h1>
+        <input type="file" id="file-input">
+      </div>
+      <div class="form-container">
+        <h1>Asociar Información</h1>
+        <form>
+          <input type="text" placeholder="Nombre" id="name-input">
+          <input type="tel" placeholder="Número de Contacto" id="contact-input">
+          <input type="text" placeholder="Ciudad" id="city-input">
+          <select id="country-select">
+            <option value="">Seleccione un País</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Chile">Chile</option>
+            </form>
+     </html>
+        //incompleto
